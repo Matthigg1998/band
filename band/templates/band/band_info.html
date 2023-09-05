@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ band.name }} - Band Info</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">{{ band.name }}</h1>
+            <p class="lead"><strong>Genre:</strong> {{ band.genre }}</p>
+            <p class="lead"><strong>Members:</strong> {{ band.members.all|join:", " }}</p>
+            <hr class="my-4">
+            <p>{{ band.bio }}</p>
+            <a class="btn btn-primary btn-sm" href="{% url 'band:home' %}" role="button">Back to Home</a>
+            <a class="btn btn-secondary btn-sm" href="{% url 'band:song_list' %}" role="button">Check Out Our Songs</a>
+            <a class="btn btn-danger btn-sm" href="{% url 'logout' %}" role="button">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

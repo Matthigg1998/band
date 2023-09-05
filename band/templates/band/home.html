@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Band Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('{% static "templates/images/background.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="container h-100 d-flex justify-content-center align-items-center">
+        <div class="bg-light p-4 rounded">
+            <h1 class="mt-4">Welcome to Our Band's Website!</h1>
+            <p>This is the home page of our band's website.</p>
+            <a class="btn btn-primary" href="{% url 'band:band_info' band.id %}">Learn More About the Band</a>
+            <a class="btn btn-secondary" href="{% url 'band:song_list' %}">Check Out Our Songs</a>
+            <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
+

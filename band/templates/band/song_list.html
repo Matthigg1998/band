@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Song List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Our Songs</h1>
+        <ul class="list-group">
+            {% for song in songs %}
+                <li class="list-group-item">
+                    <a href="#" class="btn btn-link">{{ song.title }}</a>
+                    - Released on {{ song.release_date }}
+                </li>
+            {% endfor %}
+        </ul>
+        <a class="btn btn-primary" href="{% url 'band:home' %}">Back to Home</a>
+        <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+    </div>
+</body>
+</html>
