@@ -135,3 +135,7 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# Secrets files (e.g., credentials.json, secrets.ini)
+secrets.json
+secrets.ini
